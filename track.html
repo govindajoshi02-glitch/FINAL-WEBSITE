@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Track Your Shipment | ShipMySpree</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/track.css">
+</head>
+<body>
+
+<nav id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo-white.png" alt="ShipMySpree" class="logo-light" onerror="this.outerHTML='<span style=\'font-family:Poppins,sans-serif;font-size:18px;font-weight:800;color:#fff\'>ShipMySpree</span>'">
+        <img src="assets/images/logo-transparent.png" alt="ShipMySpree" class="logo-color" onerror="this.outerHTML='<span style=\'font-family:Poppins,sans-serif;font-size:18px;font-weight:800;color:#fff\'>ShipMySpree</span>'">
+      </a>
+      <div class="nav-links">
+        <a href="how-it-works.html" class="nav-link">How It Works</a>
+        <a href="india-virtual-address.html" class="nav-link">Virtual Address</a>
+        <a href="consolidation.html" class="nav-link">Consolidation</a>
+        <a href="concierge.html" class="nav-link">Concierge</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+      <div class="nav-actions">
+        <a href="#" class="nav-login">Log In</a>
+        <a href="#" class="nav-cta">Get Free Address</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section style="background:var(--navy);padding:140px 0 100px;position:relative;overflow:hidden;min-height:60vh">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-orb" style="width:400px;height:400px;background:rgba(43,79,174,.3);top:-100px;right:-80px;animation:float 8s ease-in-out infinite"></div>
+  <div class="container" style="position:relative;z-index:2;text-align:center">
+    <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(43,79,174,.25);border:1px solid rgba(43,79,174,.5);padding:6px 16px;border-radius:40px;font-size:12px;font-weight:500;color:rgba(255,255,255,.85);margin-bottom:24px"><span class="live-dot"></span>Real-time tracking</div>
+    <h1 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(32px,5vw,60px);color:#fff;letter-spacing:-.025em;margin-bottom:16px">Track Your Shipment</h1>
+    <p style="font-size:16px;color:rgba(255,255,255,.6);margin-bottom:40px;max-width:480px;margin-left:auto;margin-right:auto">Enter your ShipMySpree tracking number or order ID to see the live status of your shipment.</p>
+    <div style="max-width:580px;margin:0 auto">
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <input type="text" class="track-input" placeholder="Enter tracking number e.g. SMS-MUM-4821-DXB" id="track-inp" style="flex:1;min-width:260px">
+        <button onclick="doTrack()" class="btn btn-primary btn-lg" style="white-space:nowrap">Track Now</button>
+      </div>
+      <div class="track-result" id="track-result">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--gray-100)">
+          <div>
+            <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px">Tracking ID</div>
+            <div style="font-family:'Poppins',sans-serif;font-size:20px;font-weight:700" id="t-id">SMS-MUM-4821-DXB</div>
+          </div>
+          <div style="text-align:right">
+            <div style="background:#DCFCE7;border:1px solid rgba(22,163,74,.3);padding:8px 16px;border-radius:20px;font-size:13px;font-weight:600;color:#15803D;display:inline-flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:#16A34A;display:inline-block;animation:pulse 2s infinite"></span>In Transit</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px">via DHL Express</div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px;background:var(--off);border-radius:var(--r-md);padding:20px">
+          <div><div style="font-size:11px;color:var(--muted);margin-bottom:4px">From</div><div style="font-size:14px;font-weight:600">Mumbai, India</div></div>
+          <div><div style="font-size:11px;color:var(--muted);margin-bottom:4px">To</div><div style="font-size:14px;font-weight:600">Dubai, UAE</div></div>
+          <div><div style="font-size:11px;color:var(--muted);margin-bottom:4px">Est. delivery</div><div style="font-size:14px;font-weight:600;color:var(--green)">2 days remaining</div></div>
+        </div>
+        <div style="font-size:13px;font-weight:600;margin-bottom:16px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)">Shipment milestones</div>
+        <div id="milestones"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span class="marquee-item"><span class="m-sep"></span>Shop <strong>Amazon India</strong></span>
+    <span class="marquee-item"><span class="m-sep"></span>Ship to <strong>USA, UAE, UK, Canada</strong></span>
+    <span class="marquee-item"><span class="m-sep"></span><strong>Free</strong> India virtual address</span>
+    <span class="marquee-item"><span class="m-sep"></span>In-house customs in <strong>5 countries</strong></span>
+    <span class="marquee-item"><span class="m-sep"></span><strong>60 days</strong> free storage</span>
+    <span class="marquee-item"><span class="m-sep"></span>Shop <strong>Flipkart, Myntra, Nykaa</strong></span>
+    <span class="marquee-item"><span class="m-sep"></span><strong>Zero</strong> consolidation fee</span>
+    <span class="marquee-item"><span class="m-sep"></span>Backed by <strong>Aipex Worldwide</strong></span>
+    <span class="marquee-item"><span class="m-sep"></span>Shop <strong>Amazon India</strong></span>
+    <span class="marquee-item"><span class="m-sep"></span>Ship to <strong>USA, UAE, UK, Canada</strong></span>
+    <span class="marquee-item"><span class="m-sep"></span><strong>Free</strong> India virtual address</span>
+    <span class="marquee-item"><span class="m-sep"></span>In-house customs in <strong>5 countries</strong></span>
+    <span class="marquee-item"><span class="m-sep"></span><strong>60 days</strong> free storage</span>
+    <span class="marquee-item"><span class="m-sep"></span>Shop <strong>Flipkart, Myntra, Nykaa</strong></span>
+    <span class="marquee-item"><span class="m-sep"></span><strong>Zero</strong> consolidation fee</span>
+    <span class="marquee-item"><span class="m-sep"></span>Backed by <strong>Aipex Worldwide</strong></span>
+  </div>
+</div>
+
+<section class="section" style="background:var(--off)">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:40px" class="reveal">
+      <h2 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:30px;letter-spacing:-.02em;margin-bottom:12px">Need help with your shipment?</h2>
+      <p style="font-size:14px;color:var(--muted)">If your tracking isn't updating or you have a delivery concern, our team is here to help.</p>
+    </div>
+    <div class="grid-3 reveal">
+      <div class="card" style="text-align:center"><div style="width:52px;height:52px;border-radius:50%;background:#EFF6FF;display:flex;align-items:center;justify-content:center;margin:0 auto 12px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-9Z" stroke="#2B4FAE" stroke-width="1.6"/><path d="m6 8 6 4 6-4" stroke="#2B4FAE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div style="font-size:15px;font-weight:600;margin-bottom:6px">Email support</div><div style="font-size:13px;color:var(--muted);margin-bottom:16px">support@shipmyspree.com</div><a href="contact.html" class="btn btn-outline" style="justify-content:center;width:100%">Contact us</a></div>
+      <div class="card" style="text-align:center"><div style="width:52px;height:52px;border-radius:50%;background:#FFF7ED;display:flex;align-items:center;justify-content:center;margin:0 auto 12px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 10.5h8M8 14h5M7 5h10a4 4 0 0 1 4 4v5a4 4 0 0 1-4 4h-4.5L8 21v-3H7a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4Z" stroke="#EA580C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div style="font-size:15px;font-weight:600;margin-bottom:6px">Live chat</div><div style="font-size:13px;color:var(--muted);margin-bottom:16px">Mon-Sat, 9 AM-7 PM IST</div><a href="#" class="btn btn-outline" style="justify-content:center;width:100%">Start chat</a></div>
+      <div class="card" style="text-align:center"><div style="width:52px;height:52px;border-radius:50%;background:#F5F3FF;display:flex;align-items:center;justify-content:center;margin:0 auto 12px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 4h8m-7 4h6m-9 3.5A2.5 2.5 0 0 1 8.5 9h7A2.5 2.5 0 0 1 18 11.5v7A2.5 2.5 0 0 1 15.5 21h-7A2.5 2.5 0 0 1 6 18.5v-7Z" stroke="#7C3AED" stroke-width="1.6" stroke-linecap="round"/></svg></div><div style="font-size:15px;font-weight:600;margin-bottom:6px">FAQ</div><div style="font-size:13px;color:var(--muted);margin-bottom:16px">Find answers to common shipping questions</div><a href="faq.html" class="btn btn-outline" style="justify-content:center;width:100%">Browse FAQ</a></div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/images/logo-white.png" alt="ShipMySpree" style="height:36px;margin-bottom:16px" onerror="this.outerHTML='<span style=\'font-family:Poppins,sans-serif;font-size:18px;font-weight:800;color:#fff;display:block;margin-bottom:16px\'>ShipMySpree</span>'">
+        <p style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.65;max-width:260px;margin-bottom:16px">India's trusted international shipping partner. Powered by Aipex Worldwide — ISO 9001:2015 certified.</p>
+        <a href="mailto:support@shipmyspree.com" style="font-size:12px;color:rgba(255,255,255,.4)">support@shipmyspree.com</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <div class="footer-links">
+          <a href="india-virtual-address.html" class="footer-link">India Virtual Address</a>
+          <a href="consolidation.html" class="footer-link">Package Consolidation</a>
+          <a href="concierge.html" class="footer-link">Shopping Concierge</a>
+          <a href="pricing.html" class="footer-link">Shipping Rates</a>
+          <a href="track.html" class="footer-link">Track Shipment</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <div class="footer-links">
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="how-it-works.html" class="footer-link">How It Works</a>
+          <a href="faq.html" class="footer-link">FAQ</a>
+          <a href="contact.html" class="footer-link">Contact Us</a>
+          <a href="blog.html" class="footer-link">Blog</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Legal</div>
+        <div class="footer-links">
+          <a href="terms.html" class="footer-link">Terms & Conditions</a>
+          <a href="privacy.html" class="footer-link">Privacy Policy</a>
+          <a href="refund.html" class="footer-link">Refund Policy</a>
+          <a href="prohibited.html" class="footer-link">Prohibited Items</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span style="font-size:12px;color:rgba(255,255,255,.3)">© 2025 ShipMySpree · A subsidiary of Aipex Worldwide Pvt Ltd</span>
+      <div class="footer-badges">
+        <span class="f-badge">ISO 9001:2015</span>
+        <span class="f-badge">200+ Countries</span>
+        <span class="f-badge">100K+ Packages</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="assets/js/track.js"></script>
+</body>
+</html>
+

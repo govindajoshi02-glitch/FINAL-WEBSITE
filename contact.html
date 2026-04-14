@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | ShipMySpree</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/contact.css">
+</head>
+<body>
+
+<nav id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo-white.png" alt="ShipMySpree" class="logo-light" onerror="this.outerHTML='<span style=\'font-family:Poppins,sans-serif;font-size:18px;font-weight:800;color:#fff\'>ShipMySpree</span>'">
+        <img src="assets/images/logo-transparent.png" alt="ShipMySpree" class="logo-color" onerror="this.outerHTML='<span style=\'font-family:Poppins,sans-serif;font-size:18px;font-weight:800;color:#fff\'>ShipMySpree</span>'">
+      </a>
+      <div class="nav-links">
+        <a href="how-it-works.html" class="nav-link">How It Works</a>
+        <a href="india-virtual-address.html" class="nav-link">Virtual Address</a>
+        <a href="consolidation.html" class="nav-link">Consolidation</a>
+        <a href="concierge.html" class="nav-link">Concierge</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+      <div class="nav-actions">
+        <a href="#" class="nav-login">Log In</a>
+        <a href="#" class="nav-cta">Get Free Address</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-orb" style="width:350px;height:350px;background:rgba(43,79,174,.3);top:-80px;right:-60px;animation:float 8s ease-in-out infinite"></div>
+  <div class="container" style="position:relative;z-index:2">
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">&rsaquo;</span><span style="color:rgba(255,255,255,.7)">Contact Us</span></div>
+    <h1>Get in Touch</h1>
+    <p>Our support team is available Monday to Saturday, 9 AM to 7 PM IST. We respond to all queries within one business day.</p>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span class="marquee-item"><span class="m-sep"></span>Shop <strong>Amazon India</strong></span>
+    <span class="marquee-item"><span class="m-sep"></span>Ship to <strong>USA, UAE, UK, Canada</strong></span>
+    <span class="marquee-item"><span class="m-sep"></span><strong>Free</strong> India virtual address</span>
+    <span class="marquee-item"><span class="m-sep"></span>In-house customs in <strong>5 countries</strong></span>
+    <span class="marquee-item"><span class="m-sep"></span><strong>60 days</strong> free storage</span>
+    <span class="marquee-item"><span class="m-sep"></span>Shop <strong>Flipkart, Myntra, Nykaa</strong></span>
+    <span class="marquee-item"><span class="m-sep"></span><strong>Zero</strong> consolidation fee</span>
+    <span class="marquee-item"><span class="m-sep"></span>Backed by <strong>Aipex Worldwide</strong></span>
+    <span class="marquee-item"><span class="m-sep"></span>Shop <strong>Amazon India</strong></span>
+    <span class="marquee-item"><span class="m-sep"></span>Ship to <strong>USA, UAE, UK, Canada</strong></span>
+    <span class="marquee-item"><span class="m-sep"></span><strong>Free</strong> India virtual address</span>
+    <span class="marquee-item"><span class="m-sep"></span>In-house customs in <strong>5 countries</strong></span>
+    <span class="marquee-item"><span class="m-sep"></span><strong>60 days</strong> free storage</span>
+    <span class="marquee-item"><span class="m-sep"></span>Shop <strong>Flipkart, Myntra, Nykaa</strong></span>
+    <span class="marquee-item"><span class="m-sep"></span><strong>Zero</strong> consolidation fee</span>
+    <span class="marquee-item"><span class="m-sep"></span>Backed by <strong>Aipex Worldwide</strong></span>
+  </div>
+</div>
+
+<section class="section" style="background:#fff">
+  <div class="container">
+    <div class="grid-2" style="gap:64px">
+      <div class="reveal-left">
+        <div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Send us a message</span></div>
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:34px;letter-spacing:-.02em;margin-bottom:32px">We'd love to hear from you</h2>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 16px">
+            <div><label>First name</label><input type="text" placeholder="Your first name" required></div>
+            <div><label>Last name</label><input type="text" placeholder="Your last name" required></div>
+          </div>
+          <label>Email address</label>
+          <input type="email" placeholder="your@email.com" required>
+          <label>Country</label>
+          <input type="text" placeholder="e.g. UAE, USA, UK...">
+          <label>Subject</label>
+          <select>
+            <option>Shipping enquiry</option>
+            <option>Package tracking</option>
+            <option>Shopping concierge</option>
+            <option>Account issue</option>
+            <option>Refund or claim</option>
+            <option>Business / bulk shipping</option>
+            <option>Other</option>
+          </select>
+          <label>Message</label>
+          <textarea placeholder="Tell us how we can help..."></textarea>
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center" id="submit-btn">Send Message</button>
+        </form>
+      </div>
+      <div class="reveal-right">
+        <div class="contact-info-card">
+          <div style="font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:28px">Contact information</div>
+          <div class="ci-item"><div class="ci-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 4a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4z" stroke="#93C5FD" stroke-width="1.2"/><path d="M2 5l7 5 7-5" stroke="#93C5FD" stroke-width="1.2" stroke-linecap="round"/></svg></div><div><div class="ci-title">Email</div><div class="ci-val">support@shipmyspree.com</div></div></div>
+          <div class="ci-item"><div class="ci-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#4ADE80" stroke-width="1.2"/><path d="M9 5v4.5l3 1.5" stroke="#4ADE80" stroke-width="1.2" stroke-linecap="round"/></svg></div><div><div class="ci-title">Support hours</div><div class="ci-val">Mon–Sat, 9 AM – 7 PM IST</div></div></div>
+          <div class="ci-item"><div class="ci-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2C6.24 2 4 4.24 4 7c0 4 5 9 5 9s5-5 5-9c0-2.76-2.24-5-5-5z" stroke="#F97316" stroke-width="1.2"/><circle cx="9" cy="7" r="2" stroke="#F97316" stroke-width="1.2"/></svg></div><div><div class="ci-title">Warehouse</div><div class="ci-val">Mumbai, Maharashtra, India</div></div></div>
+          <div class="ci-item" style="margin-bottom:0"><div class="ci-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="2" width="14" height="14" rx="4" stroke="#C4B5FD" stroke-width="1.2"/><path d="M6 9l2 2 4-4" stroke="#C4B5FD" stroke-width="1.2" stroke-linecap="round"/></svg></div><div><div class="ci-title">Live chat</div><div class="ci-val">Available on website during business hours</div></div></div>
+        </div>
+        <div style="background:var(--off);border-radius:var(--r-xl);padding:28px">
+          <div style="font-size:14px;font-weight:600;margin-bottom:16px">Quick links</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <a href="faq.html" style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#fff;border:1px solid var(--gray-100);border-radius:var(--r-md);font-size:13px;font-weight:500;color:var(--text);transition:border-color .2s" onmouseover="this.style.borderColor='var(--brand)'" onmouseout="this.style.borderColor='var(--gray-100)'">Browse FAQs <span style="color:var(--muted)">→</span></a>
+            <a href="track.html" style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#fff;border:1px solid var(--gray-100);border-radius:var(--r-md);font-size:13px;font-weight:500;color:var(--text);transition:border-color .2s" onmouseover="this.style.borderColor='var(--brand)'" onmouseout="this.style.borderColor='var(--gray-100)'">Track a shipment <span style="color:var(--muted)">→</span></a>
+            <a href="refund.html" style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#fff;border:1px solid var(--gray-100);border-radius:var(--r-md);font-size:13px;font-weight:500;color:var(--text);transition:border-color .2s" onmouseover="this.style.borderColor='var(--brand)'" onmouseout="this.style.borderColor='var(--gray-100)'">Refund policy <span style="color:var(--muted)">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/images/logo-white.png" alt="ShipMySpree" style="height:36px;margin-bottom:16px" onerror="this.outerHTML='<span style=\'font-family:Poppins,sans-serif;font-size:18px;font-weight:800;color:#fff;display:block;margin-bottom:16px\'>ShipMySpree</span>'">
+        <p style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.65;max-width:260px;margin-bottom:16px">India's trusted international shipping partner. Powered by Aipex Worldwide — ISO 9001:2015 certified.</p>
+        <a href="mailto:support@shipmyspree.com" style="font-size:12px;color:rgba(255,255,255,.4)">support@shipmyspree.com</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <div class="footer-links">
+          <a href="india-virtual-address.html" class="footer-link">India Virtual Address</a>
+          <a href="consolidation.html" class="footer-link">Package Consolidation</a>
+          <a href="concierge.html" class="footer-link">Shopping Concierge</a>
+          <a href="pricing.html" class="footer-link">Shipping Rates</a>
+          <a href="track.html" class="footer-link">Track Shipment</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <div class="footer-links">
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="how-it-works.html" class="footer-link">How It Works</a>
+          <a href="faq.html" class="footer-link">FAQ</a>
+          <a href="contact.html" class="footer-link">Contact Us</a>
+          <a href="blog.html" class="footer-link">Blog</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Legal</div>
+        <div class="footer-links">
+          <a href="terms.html" class="footer-link">Terms & Conditions</a>
+          <a href="privacy.html" class="footer-link">Privacy Policy</a>
+          <a href="refund.html" class="footer-link">Refund Policy</a>
+          <a href="prohibited.html" class="footer-link">Prohibited Items</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span style="font-size:12px;color:rgba(255,255,255,.3)">© 2025 ShipMySpree · A subsidiary of Aipex Worldwide Pvt Ltd</span>
+      <div class="footer-badges">
+        <span class="f-badge">ISO 9001:2015</span>
+        <span class="f-badge">200+ Countries</span>
+        <span class="f-badge">100K+ Packages</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="assets/js/contact.js"></script>
+</body>
+</html>
+
